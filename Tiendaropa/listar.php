@@ -18,6 +18,9 @@
         <th>MARCA</th>
         <th>TALLE</th>
         <th>PRECIO</th>
+        <th>IMAGEN</th>
+        <th>EDITAR</th>
+        <th>BORRAR</th>
     </tr>
     <?php
     // 1) Conexion
@@ -48,6 +51,10 @@
         <td><?php echo $row['marca']; ?></td>
         <td><?php echo $row['talle']; ?></td>
         <td><?php echo $row['precio']; ?></td>
+        <td><img src="data:image/png;base64, <?php echo base64_encode($row['imagen'])?>" alt="" width="100px" height="100px"></td>
+        <td><a href="editar.php?id=<?php echo $row['id'];?>">Editar</a></td>
+        <td><a href="borrar.php?id=<?php echo $row['id'];?>">Borrar</a></td>
+        
         </tr>
     <?php } ?>
     </table>
